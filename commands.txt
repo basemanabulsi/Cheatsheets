@@ -1,0 +1,84 @@
+Image Vs Container:
+	* An IMage is the application we want to run.
+	* A container is an instance of that image running as a process.
+	* You can have many containers running off the same image.
+	* Docker's default image "registry" is called Docker hub(hub.docker.com).
+
+Docker command line structure:
+	* Old ( Still work): docker <command> (options)
+	* New: docker <command> <sub-command> (options)
+
+1- docker version
+	* Verified cli can talk to engine.
+	* Shows docker versions on the client and server machine.
+
+2- docker info
+	* Shows most of the config values of engine.
+	 
+3- docker container run      ( Old version command: docker run)
+	* Start a new container from an image.
+	* --detach : tells docker to run in the background.
+	* --name : specify a name for a container ( Must be unique).
+
+4- docker container stop <container id/name> ( docker stop <container id/name> ) 
+	* If on windows, after ctrl+C
+	* Stops the container process but doesn't remove it.
+
+5- docker container ls ( docker ps)
+	* List running containers.
+
+----------------------------
+run VS start
+
+	- docker container run:
+		* Always starts a NEW container.
+	- docker container start:
+		* Used to start an existing stopped container.
+
+---------------------------        
+
+6- docker container logs ( docker logs)
+	* Show logs for a specific container.
+
+7-docker container top <container name>
+	* Display the running processes of a container.
+
+8- docker container rm <containers id/name> ( docker rm <containers id/name> )
+	* Remove(delete) one or more containers.
+
+**********
+MOnitoring docker container:
+
+1-docker container top <container name>
+	* Display the running processes of a container.
+
+2- docker container inspect ( docker inspect)
+	* Shows metadata(config) about the container ( startup config, volumes, networking, etc)	
+
+3- docker container stats ( docker stats
+	* Shows live performance data for all containers.
+**********
+
+9- docker container run -it 
+	* Starts new container interactively
+
+	-it is two seperate commands:
+		1- -t : pseudo-tty = Simulates a real terminal, like what SSH does.
+		2- -i : interactive= Keep session open to receive terminal input.
+
+	- We can use the command "docker container run -it <container> bash"
+		+bash shell : if run with -it, it will give you a terminal inside the running 					container.  
+
+	- "Ubuntu image": its default CMD is bash, so we don't have to specify it.
+
+10- docker container exec -it
+	* Run additional command in existing container.
+  
+
+
+
+
+
+
+
+
